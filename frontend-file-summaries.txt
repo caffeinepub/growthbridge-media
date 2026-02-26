@@ -1,0 +1,6 @@
+{
+  "frontend/src/hooks/useQueries.ts": "All React Query hooks for backend interactions — user profile, admin check, influencer applications, brand inquiries, campaigns, and aggregate stats. Fixed `useGetCallerUserProfile` by removing the illegal `require()`/hook-in-callback pattern; the hook now correctly uses only `useActor` at the top level.",
+  "frontend/src/pages/AdminDashboard.tsx": "Protected admin dashboard page that requires Internet Identity authentication and admin role. Provides tabbed interface for managing influencer applications (approve/reject), viewing brand inquiries, creating/updating campaigns with inline deal value editing, and viewing aggregate stats (total deal value and 20% commission).",
+  "frontend/src/index.css": "Global stylesheet with Tailwind directives and GrowthBridge Media OKLCH design tokens for light/dark modes, including teal primary, amber accent, smooth scroll, antialiasing, focus-visible styles, and a `shadow-soft` utility class.",
+  "frontend/tailwind.config.js": "Tailwind configuration extending the theme with OKLCH color tokens, Inter font family, custom border radii, and a `shadow-soft` box-shadow utility alongside accordion animations."
+}

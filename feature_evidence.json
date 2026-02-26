@@ -1,0 +1,205 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-implement-a-sticky-navigation-bar-with-the-growthbridge-media-logo-on-the-left-and-navigation-links-home-for-brands-for-influencers-pricing-contact-the-navbar-must-highlight-the-active-link-change-background-style-on-scroll-support-smooth-scrolling-to-page-sections-and-include-a-mobile-hamburger-menu-with-toggle-animation",
+      "featureTitle": "Implement a sticky navigation bar with the GrowthBridge Media logo on the left and navigation links: Home, For Brands, For Influencers, Pricing, Contact. The navbar must highlight the active link, change background style on scroll, support smooth scrolling to page sections, and include a mobile hamburger menu with toggle animation.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Navbar.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-hero-section-with-the-headline-connecting-brands-with-high-converting-micro-influencers-a-subheadline-we-help-brands-scale-with-curated-influencer-campaigns-and-help-creators-secure-consistent-paid-deals-and-two-cta-buttons-join-as-influencer-scrolls-to-influencer-application-form-and-work-with-us-as-a-brand-scrolls-to-brand-inquiry-form-buttons-must-have-hover-animations-click-feedback-keyboard-accessibility-and-aria-label-attributes",
+      "featureTitle": "Build a Hero section with the headline 'Connecting Brands With High-Converting Micro-Influencers', a subheadline 'We help brands scale with curated influencer campaigns and help creators secure consistent paid deals.', and two CTA buttons: 'Join as Influencer' (scrolls to Influencer Application Form) and 'Work With Us as a Brand' (scrolls to Brand Inquiry Form). Buttons must have hover animations, click feedback, keyboard accessibility, and aria-label attributes.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/HeroSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-how-it-works-section-with-two-parallel-tracks-for-brands-3-steps-submit-campaign-goal-get-matched-with-curated-influencers-we-manage-execution-reporting-and-for-influencers-3-steps-apply-to-join-network-get-matched-with-campaigns-get-paid-securely",
+      "featureTitle": "Build a 'How It Works' section with two parallel tracks — For Brands (3 steps: Submit campaign goal, Get matched with curated influencers, We manage execution & reporting) and For Influencers (3 steps: Apply to join network, Get matched with campaigns, Get paid securely).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/HowItWorksSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-services-section-displaying-two-columns-for-brands-influencer-campaign-management-product-launch-campaigns-brand-awareness-campaigns-niche-targeting-geo-targeted-campaigns-and-for-influencers-brand-deal-sourcing-negotiation-handling-long-term-partnerships-campaign-support",
+      "featureTitle": "Build a Services section displaying two columns: For Brands (Influencer Campaign Management, Product Launch Campaigns, Brand Awareness Campaigns, Niche Targeting, Geo-targeted campaigns) and For Influencers (Brand Deal Sourcing, Negotiation Handling, Long-term partnerships, Campaign support).",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/ServicesSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-pricing-section-that-describes-the-20-commission-model-and-optional-package-tiers-in-plain-text-with-no-currency-symbols-or-specific-monetary-figures-displayed-anywhere-on-the-page",
+      "featureTitle": "Build a Pricing section that describes the 20% commission model and optional package tiers in plain text, with no currency symbols or specific monetary figures displayed anywhere on the page.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/PricingSection.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-fully-functional-influencer-application-form-with-fields-full-name-instagram-handle-followers-count-niche-engagement-rate-email-location-rate-card-portfolio-link-the-form-must-include-required-field-validation-with-inline-error-messages-prevent-page-reload-on-submit-show-a-success-modal-popup-on-successful-submission-animate-the-submit-button-and-post-data-to-the-motoko-backend",
+      "featureTitle": "Build a fully functional Influencer Application Form with fields: Full Name, Instagram Handle, Followers Count, Niche, Engagement Rate, Email, Location, Rate Card, Portfolio Link. The form must include required field validation with inline error messages, prevent page reload on submit, show a success modal popup on successful submission, animate the submit button, and POST data to the Motoko backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/InfluencerApplicationForm.tsx",
+        "frontend/src/components/SuccessModal.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-fully-functional-brand-inquiry-form-with-fields-brand-name-industry-website-marketing-contact-name-email-budget-range-campaign-goal-timeline-the-form-must-include-required-field-validation-with-inline-error-messages-prevent-page-reload-on-submit-show-a-success-modal-popup-on-successful-submission-animate-the-submit-button-and-post-data-to-the-motoko-backend",
+      "featureTitle": "Build a fully functional Brand Inquiry Form with fields: Brand Name, Industry, Website, Marketing Contact Name, Email, Budget Range, Campaign Goal, Timeline. The form must include required field validation with inline error messages, prevent page reload on submit, show a success modal popup on successful submission, animate the submit button, and POST data to the Motoko backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BrandInquiryForm.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-protected-admin-dashboard-accessible-only-after-internet-identity-login-the-dashboard-must-allow-admins-to-view-all-influencer-applications-and-approve-reject-them-view-all-brand-inquiries-assign-influencers-to-campaigns-create-and-update-campaign-records-including-deal-value-and-status-and-view-aggregate-stats-showing-total-deal-value-and-total-20-commission-earnings-across-all-campaigns",
+      "featureTitle": "Build a protected Admin Dashboard accessible only after Internet Identity login. The dashboard must allow admins to: view all influencer applications and approve/reject them; view all brand inquiries; assign influencers to campaigns; create and update campaign records including deal value and status; and view aggregate stats showing total deal value and total 20% commission earnings across all campaigns.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/AccessDeniedScreen.tsx",
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/pages/AdminDashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-cohesive-minimal-modern-startup-visual-theme-across-the-entire-application-clean-white-background-professional-typography-hierarchy-soft-shadows-rounded-buttons-high-whitespace-smooth-scroll-behavior-animated-counter-for-campaigns-completed-in-the-hero-or-stats-area-and-consistent-hover-click-interaction-feedback-on-all-interactive-elements-ensure-semantic-html5-proper-label-tags-aria-attributes-and-keyboard-navigability-throughout",
+      "featureTitle": "Apply a cohesive minimal modern startup visual theme across the entire application: clean white background, professional typography hierarchy, soft shadows, rounded buttons, high whitespace, smooth scroll behavior, animated counter for campaigns completed in the hero or stats area, and consistent hover/click interaction feedback on all interactive elements. Ensure semantic HTML5, proper label tags, aria attributes, and keyboard navigability throughout.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BrandInquiryForm.tsx",
+        "frontend/src/components/HeroSection.tsx",
+        "frontend/src/components/InfluencerApplicationForm.tsx",
+        "frontend/src/components/Navbar.tsx",
+        "frontend/src/components/StatsSection.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/AdminDashboard.tsx",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "user-approval@3.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

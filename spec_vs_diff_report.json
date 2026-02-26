@@ -1,0 +1,86 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-26T19:01:47.801Z",
+  "summary": "The diff implements the vast majority of the build request requirements. All major frontend sections (Navbar, Hero, HowItWorks, Services, Pricing, InfluencerApplicationForm, BrandInquiryForm, StatsSection, Footer, AdminDashboard) are present, along with the Motoko backend in a single main.mo file. Internet Identity authentication is integrated. A few specific details warrant closer inspection but overall coverage is high.",
+  "missing_requirements": [
+    {
+      "requirement": "Hero section illustration image (hero-illustration.dim_1200x600.png) — abstract network graph with amber and teal warm gradient tones on white background — is required as a generated asset",
+      "reason": "No evidence of the hero-illustration.dim_1200x600.png being referenced or generated in any of the diffed files. The HeroSection.tsx uses background decorations (blurred divs) but no img tag referencing the required image asset.",
+      "evidence": [
+        "frontend/src/components/HeroSection.tsx"
+      ]
+    },
+    {
+      "requirement": "REQ-8: Campaign status can be updated — updateCampaignStatus backend function must be exposed in main.mo",
+      "reason": "The frontend useQueries.ts references useUpdateCampaignStatus and AdminDashboard uses onUpdateStatus, but the backend main.mo is truncated so the full set of exposed functions is not visible. Cannot fully confirm the updateCampaignStatus update function is implemented.",
+      "evidence": [
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "ProfileSetupModal — a modal that appears after Internet Identity login prompting users to set up a name and email profile",
+      "reason": "The build request does not mention any user profile setup flow or modal. This feature including ProfileSetupModal.tsx, saveCallerUserProfile, getCallerUserProfile, and userProfiles map in backend was added without being requested.",
+      "evidence": [
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/App.tsx",
+        "backend/main.mo",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    },
+    {
+      "description": "User approval and request-approval system with UserApproval mixin, requestApproval, setApproval, listApprovals, and isCallerApproved functions",
+      "reason": "The build request does not specify any user approval workflow beyond admin Internet Identity protection. A full UserApproval module with approval states was added without being requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "AccessControl and MixinAuthorization modules integrated into the backend actor",
+      "reason": "The build request only requires Internet Identity authentication for the Admin Dashboard. A full access control and mixin authorization module system was not requested.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Budget Range options in BrandInquiryForm use Indian currency unit labels such as Under 1 Lakh, 1-5 Lakhs, and 25 Lakhs+ which convey monetary figures",
+      "reason": "The build constraint explicitly states no currency symbols or monetary figures may appear anywhere in the UI. These budget range labels convey specific monetary amounts which violates the constraint even without explicit currency symbols.",
+      "evidence": [
+        "frontend/src/components/BrandInquiryForm.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.72,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/AccessDeniedScreen.tsx",
+    "frontend/src/components/BrandInquiryForm.tsx",
+    "frontend/src/components/Footer.tsx",
+    "frontend/src/components/HeroSection.tsx",
+    "frontend/src/components/HowItWorksSection.tsx",
+    "frontend/src/components/InfluencerApplicationForm.tsx",
+    "frontend/src/components/Navbar.tsx",
+    "frontend/src/components/PricingSection.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/ServicesSection.tsx",
+    "frontend/src/components/StatsSection.tsx",
+    "frontend/src/components/SuccessModal.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AdminDashboard.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

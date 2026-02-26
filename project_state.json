@@ -1,0 +1,145 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "GrowthBridge Media - A fully dynamic, production-ready web application for a Micro-Influencer Marketing Agency. Connects brands with curated micro-influencers (10K–100K followers) on a 20% commission model. Built with React + TailwindCSS frontend and Motoko backend (on-chain storage). Features public-facing pages, fully functional forms, and a protected Admin Dashboard behind Internet Identity login.",
+  "architectural_notes": [
+    "Frontend: React + TailwindCSS; Backend: Motoko (Internet Computer on-chain storage)",
+    "Admin dashboard protected by Internet Identity (passkey/Google/Apple login)",
+    "No currency symbols or figures displayed anywhere in the UI",
+    "20% commission model tracked in Campaign canister: { brandId, influencerId, dealValue, commission, status }",
+    "Database schema: Influencer, Brand, Campaign Motoko canisters mirroring the specified MongoDB schema"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Abstract network graph illustration showing connected nodes symbolizing brand-influencer connections, warm gradient tones of amber and teal on a white background (hero-illustration.dim_1200x600.png)\n- GrowthBridge Media wordmark logo — bold sans-serif text with a small upward-arrow or bridge icon accent in teal (logo.dim_320x80.png)",
+  "existing_features": [
+    {
+      "id": "feature-implement-a-sticky-navigation-bar-with-the-growthbridge-media-logo-on-the-left-and-navigation-links-home-for-brands-for-influencers-pricing-contact-the-navbar-must-highlight-the-active-link-change-background-style-on-scroll-support-smooth-scrolling-to-page-sections-and-include-a-mobile-hamburger-menu-with-toggle-animation",
+      "title": "Implement a sticky navigation bar with the GrowthBridge Media logo on the left and navigation links: Home, For Brands, For Influencers, Pricing, Contact. The navbar must highlight the active link, change background style on scroll, support smooth scrolling to page sections, and include a mobile hamburger menu with toggle animation.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-hero-section-with-the-headline-connecting-brands-with-high-converting-micro-influencers-a-subheadline-we-help-brands-scale-with-curated-influencer-campaigns-and-help-creators-secure-consistent-paid-deals-and-two-cta-buttons-join-as-influencer-scrolls-to-influencer-application-form-and-work-with-us-as-a-brand-scrolls-to-brand-inquiry-form-buttons-must-have-hover-animations-click-feedback-keyboard-accessibility-and-aria-label-attributes",
+      "title": "Build a Hero section with the headline 'Connecting Brands With High-Converting Micro-Influencers', a subheadline 'We help brands scale with curated influencer campaigns and help creators secure consistent paid deals.', and two CTA buttons: 'Join as Influencer' (scrolls to Influencer Application Form) and 'Work With Us as a Brand' (scrolls to Brand Inquiry Form). Buttons must have hover animations, click feedback, keyboard accessibility, and aria-label attributes.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-how-it-works-section-with-two-parallel-tracks-for-brands-3-steps-submit-campaign-goal-get-matched-with-curated-influencers-we-manage-execution-reporting-and-for-influencers-3-steps-apply-to-join-network-get-matched-with-campaigns-get-paid-securely",
+      "title": "Build a 'How It Works' section with two parallel tracks — For Brands (3 steps: Submit campaign goal, Get matched with curated influencers, We manage execution & reporting) and For Influencers (3 steps: Apply to join network, Get matched with campaigns, Get paid securely).",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-services-section-displaying-two-columns-for-brands-influencer-campaign-management-product-launch-campaigns-brand-awareness-campaigns-niche-targeting-geo-targeted-campaigns-and-for-influencers-brand-deal-sourcing-negotiation-handling-long-term-partnerships-campaign-support",
+      "title": "Build a Services section displaying two columns: For Brands (Influencer Campaign Management, Product Launch Campaigns, Brand Awareness Campaigns, Niche Targeting, Geo-targeted campaigns) and For Influencers (Brand Deal Sourcing, Negotiation Handling, Long-term partnerships, Campaign support).",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-pricing-section-that-describes-the-20-commission-model-and-optional-package-tiers-in-plain-text-with-no-currency-symbols-or-specific-monetary-figures-displayed-anywhere-on-the-page",
+      "title": "Build a Pricing section that describes the 20% commission model and optional package tiers in plain text, with no currency symbols or specific monetary figures displayed anywhere on the page.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-fully-functional-influencer-application-form-with-fields-full-name-instagram-handle-followers-count-niche-engagement-rate-email-location-rate-card-portfolio-link-the-form-must-include-required-field-validation-with-inline-error-messages-prevent-page-reload-on-submit-show-a-success-modal-popup-on-successful-submission-animate-the-submit-button-and-post-data-to-the-motoko-backend",
+      "title": "Build a fully functional Influencer Application Form with fields: Full Name, Instagram Handle, Followers Count, Niche, Engagement Rate, Email, Location, Rate Card, Portfolio Link. The form must include required field validation with inline error messages, prevent page reload on submit, show a success modal popup on successful submission, animate the submit button, and POST data to the Motoko backend.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-fully-functional-brand-inquiry-form-with-fields-brand-name-industry-website-marketing-contact-name-email-budget-range-campaign-goal-timeline-the-form-must-include-required-field-validation-with-inline-error-messages-prevent-page-reload-on-submit-show-a-success-modal-popup-on-successful-submission-animate-the-submit-button-and-post-data-to-the-motoko-backend",
+      "title": "Build a fully functional Brand Inquiry Form with fields: Brand Name, Industry, Website, Marketing Contact Name, Email, Budget Range, Campaign Goal, Timeline. The form must include required field validation with inline error messages, prevent page reload on submit, show a success modal popup on successful submission, animate the submit button, and POST data to the Motoko backend.",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-protected-admin-dashboard-accessible-only-after-internet-identity-login-the-dashboard-must-allow-admins-to-view-all-influencer-applications-and-approve-reject-them-view-all-brand-inquiries-assign-influencers-to-campaigns-create-and-update-campaign-records-including-deal-value-and-status-and-view-aggregate-stats-showing-total-deal-value-and-total-20-commission-earnings-across-all-campaigns",
+      "title": "Build a protected Admin Dashboard accessible only after Internet Identity login. The dashboard must allow admins to: view all influencer applications and approve/reject them; view all brand inquiries; assign influencers to campaigns; create and update campaign records including deal value and status; and view aggregate stats showing total deal value and total 20% commission earnings across all campaigns.",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-cohesive-minimal-modern-startup-visual-theme-across-the-entire-application-clean-white-background-professional-typography-hierarchy-soft-shadows-rounded-buttons-high-whitespace-smooth-scroll-behavior-animated-counter-for-campaigns-completed-in-the-hero-or-stats-area-and-consistent-hover-click-interaction-feedback-on-all-interactive-elements-ensure-semantic-html5-proper-label-tags-aria-attributes-and-keyboard-navigability-throughout",
+      "title": "Apply a cohesive minimal modern startup visual theme across the entire application: clean white background, professional typography hierarchy, soft shadows, rounded buttons, high whitespace, smooth scroll behavior, animated counter for campaigns completed in the hero or stats area, and consistent hover/click interaction feedback on all interactive elements. Ensure semantic HTML5, proper label tags, aria attributes, and keyboard navigability throughout.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Sticky navbar with smooth scroll, active link highlighting, scroll-triggered background change, and mobile hamburger menu",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Hero section with headline, subheadline, and dual CTA buttons (Join as Influencer / Work With Us as a Brand) with hover animations and keyboard accessibility",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "How It Works, Services, Pricing (20% commission model, no currency figures), and Contact sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Influencer Application Form with full validation, inline errors, success modal popup, and backend submission",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Brand Inquiry Form with full validation, inline errors, success modal popup, and backend submission",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Motoko backend canisters storing influencer applications, brand inquiries, and campaign data with MongoDB-equivalent schema",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Protected Admin Dashboard behind Internet Identity login: view/approve influencers, manage brand leads, assign campaigns, track deal values and 20% commission earnings",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-15",
+      "summary": "Implement a Motoko backend actor that stores influencer applications, brand inquiries, and campaign records. Influencer schema: name, handle, followers, niche, engagementRate, email, location, rateCard, portfolio, approved (Bool). Brand schema: brandName, industry, website, contactName, email, budgetRange, campaignGoal, timeline. Campaign schema: brandId, influencerId, dealValue, commission (20% of dealValue), status. Expose query and update functions for CRUD operations needed by the frontend and admin dashboard.",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "GrowthBridge Media",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
