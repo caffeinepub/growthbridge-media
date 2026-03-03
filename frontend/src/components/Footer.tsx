@@ -9,7 +9,7 @@ const FOOTER_LINKS = {
 
 export default function Footer() {
   const year = new Date().getFullYear();
-  const appId = encodeURIComponent(typeof window !== 'undefined' ? window.location.hostname : 'growthbridge-media');
+  const appId = encodeURIComponent(typeof window !== 'undefined' ? window.location.hostname : 'hp-bridge-media');
 
   const scrollTo = (id: string) => {
     const el = document.getElementById(id);
@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <img
               src="/assets/generated/logo.dim_320x80.png"
-              alt="GrowthBridge Media"
+              alt="HP BRIDGE MEDIA"
               className="h-8 w-auto mb-4 brightness-0 invert"
             />
             <p className="text-slate-400 text-sm leading-relaxed mb-6 max-w-xs">
@@ -40,7 +40,7 @@ export default function Footer() {
                 <a
                   key={label}
                   href="#"
-                  aria-label={`GrowthBridge Media on ${label}`}
+                  aria-label={`HP BRIDGE MEDIA on ${label}`}
                   className="w-9 h-9 bg-slate-800 hover:bg-teal-600 rounded-lg flex items-center justify-center transition-colors"
                 >
                   {icon}
@@ -99,7 +99,7 @@ export default function Footer() {
       {/* Bottom bar */}
       <div className="border-t border-slate-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-          <p>© {year} GrowthBridge Media. All rights reserved.</p>
+          <p>© {year} HP BRIDGE MEDIA. All rights reserved.</p>
           <p className="flex items-center gap-1">
             Built with <Heart className="w-3 h-3 text-teal-500 fill-teal-500" /> using{' '}
             <a

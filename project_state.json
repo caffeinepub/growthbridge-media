@@ -1,17 +1,17 @@
 {
   "schemaVersion": "1.0.0",
-  "projectStateVersion": 3,
-  "summary": "GrowthBridge Media - A fully dynamic, production-ready web application for a Micro-Influencer Marketing Agency. Connects brands with curated micro-influencers (10K–100K followers) on a 20% commission model. Built with React + TailwindCSS frontend and Motoko backend (on-chain storage). Features public-facing pages, fully functional forms, and a protected Admin Dashboard behind Internet Identity login.",
+  "projectStateVersion": 9,
+  "summary": "HP BRIDGE MEDIA - A fully dynamic, production-ready web application for a Micro-Influencer Marketing Agency. Connects brands with curated micro-influencers (10K–100K followers) on a 20% commission model. Built with React + TailwindCSS frontend and Motoko backend (on-chain storage). Features public-facing pages, fully functional forms, and a protected Admin Dashboard behind Internet Identity login. Currently undergoing a full-site UX/conversion overhaul: sticky navbar with CTA, focused hero with animated counters, streamlined forms with inline validation, trust signals/testimonials, responsive mobile-first layouts, and full accessibility improvements.",
   "architectural_notes": [
     "Frontend: React + TailwindCSS; Backend: Motoko (Internet Computer on-chain storage)",
     "Admin dashboard protected by Internet Identity (passkey/Google/Apple login)",
     "No currency symbols or figures displayed anywhere in the UI",
     "20% commission model tracked in Campaign canister: { brandId, influencerId, dealValue, commission, status }",
-    "Database schema: Influencer, Brand, Campaign Motoko canisters mirroring the specified MongoDB schema"
+    "Database schema: Influencer, Brand, Campaign Motoko canisters mirroring the specified MongoDB schema",
+    "Full UX/conversion overhaul in progress: single focused primary CTA per page section, scroll-aware navbar, inline form validation, trust signals, mobile-first responsive layouts, and ARIA/keyboard accessibility throughout"
   ],
   "known_issues": [],
-  "isFixRequest": false,
-  "imageRequirements": "## Required Images\n- Abstract network graph illustration showing connected nodes symbolizing brand-influencer connections, warm gradient tones of amber and teal on a white background (hero-illustration.dim_1200x600.png)\n- GrowthBridge Media wordmark logo — bold sans-serif text with a small upward-arrow or bridge icon accent in teal (logo.dim_320x80.png)",
+  "isFixRequest": true,
   "existing_features": [
     {
       "id": "feature-implement-a-sticky-navigation-bar-with-the-growthbridge-media-logo-on-the-left-and-navigation-links-home-for-brands-for-influencers-pricing-contact-the-navbar-must-highlight-the-active-link-change-background-style-on-scroll-support-smooth-scrolling-to-page-sections-and-include-a-mobile-hamburger-menu-with-toggle-animation",
@@ -84,6 +84,30 @@
         "REQ-10"
       ],
       "version": 1
+    },
+    {
+      "id": "feature-replace-every-visible-instance-of-growthbridge-media-with-hp-bridge-media-throughout-the-entire-frontend-including-but-not-limited-to-the-navbar-logo-text-the-hero-section-the-footer-logo-and-any-footer-copy-the-page-title-in-index-html-the-accessdeniedscreen-and-any-other-component-or-page-that-renders-the-company-name-as-user-facing-text",
+      "title": "Replace every visible instance of 'GrowthBridge Media' with 'HP BRIDGE MEDIA' throughout the entire frontend, including but not limited to: the Navbar logo text, the Hero section, the Footer logo and any footer copy, the page <title> in index.html, the AccessDeniedScreen, and any other component or page that renders the company name as user-facing text.",
+      "reqIds": [
+        "REQ-18"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-in-frontend-src-components-navbar-tsx-locate-every-hardcoded-string-or-jsx-text-node-that-renders-growthbridge-media-including-any-partial-matches-such-as-growthbridge-or-growth-bridge-media-and-replace-each-one-with-hp-bridge-media-the-navbar-logo-text-visible-in-the-top-left-must-read-hp-bridge-media-at-all-viewport-sizes-and-in-both-the-transparent-and-scrolled-opaque-background-states",
+      "title": "In frontend/src/components/Navbar.tsx, locate every hardcoded string or JSX text node that renders 'GrowthBridge Media' (including any partial matches such as 'GrowthBridge' or 'Growth Bridge Media') and replace each one with 'HP BRIDGE MEDIA'. The navbar logo text visible in the top-left must read 'HP BRIDGE MEDIA' at all viewport sizes and in both the transparent and scrolled/opaque background states.",
+      "reqIds": [
+        "REQ-19"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-perform-a-full-codebase-audit-of-all-frontend-source-files-index-html-app-tsx-footer-tsx-herosection-tsx-accessdeniedscreen-tsx-admindashboard-tsx-and-any-other-tsx-ts-html-file-under-the-frontend-directory-and-replace-every-remaining-occurrence-of-growthbridge-media-growthbridge-or-growth-bridge-media-with-hp-bridge-media-this-includes-but-is-not-limited-to-the-title-tag-in-index-html-footer-logo-text-copyright-line-hero-section-text-and-the-access-denied-screen",
+      "title": "Perform a full-codebase audit of all frontend source files (index.html, App.tsx, Footer.tsx, HeroSection.tsx, AccessDeniedScreen.tsx, AdminDashboard.tsx, and any other .tsx/.ts/.html file under the frontend directory) and replace every remaining occurrence of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA'. This includes but is not limited to: the <title> tag in index.html, footer logo text, copyright line, hero section text, and the access-denied screen.",
+      "reqIds": [
+        "REQ-20"
+      ],
+      "version": 1
     }
   ],
   "new_feature_requests": [
@@ -134,6 +158,86 @@
       "summary": "Implement a Motoko backend actor that stores influencer applications, brand inquiries, and campaign records. Influencer schema: name, handle, followers, niche, engagementRate, email, location, rateCard, portfolio, approved (Bool). Brand schema: brandName, industry, website, contactName, email, budgetRange, campaignGoal, timeline. Campaign schema: brandId, influencerId, dealValue, commission (20% of dealValue), status. Expose query and update functions for CRUD operations needed by the frontend and admin dashboard.",
       "reqIds": [
         "REQ-8"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-16",
+      "summary": "Add trust signals section: testimonials, stats/credentials, and social proof elements",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-17",
+      "summary": "Add prominent Sign Up CTA button in the sticky navbar",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-18",
+      "summary": "Add animated stats counters in the hero section for social proof",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Full responsive mobile-first overhaul: flexible grid layouts and mobile breakpoints across all sections",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-20",
+      "summary": "Add a prominent primary CTA button ('Sign Up' or 'Get Started') to the sticky navbar, visually distinct from nav links, positioned on the right side of the navbar. The button must have hover/click feedback, aria-label, and keyboard accessibility. On click, it should smooth-scroll to the Influencer Application Form.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-21",
+      "summary": "Refocus the Hero section around a single primary conversion goal. Elevate one CTA button (e.g., 'Join as Influencer') as the dominant primary action above the fold with strong visual prominence. The secondary CTA ('Work With Us as a Brand') should be visually de-emphasized (e.g., outlined/ghost style). Add animated stats counters (e.g., Campaigns Completed, Influencers in Network, Brands Served) directly within or immediately below the hero for social proof. Ensure the headline and subheadline communicate value within 5 seconds.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-22",
+      "summary": "Add a Trust Signals / Social Proof section to the page. Include: (1) at least 3 testimonial-style cards with a name, role/company, and quote; (2) a row of recognizable-style brand logo placeholders or partner badges; (3) a credentials or 'Why Us' blurb with icons and short bullets (e.g., vetted influencers, secure payments, dedicated support). Place this section between the How It Works section and the forms.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-23",
+      "summary": "Apply a comprehensive responsive mobile-first layout overhaul across all page sections: Navbar, Hero, StatsSection, HowItWorks, Services, Pricing, Trust Signals, forms, and Footer. Use flexible grid/flex layouts with proper Tailwind responsive breakpoints (sm, md, lg). Ensure tap targets are at least 44px, text remains readable at small sizes, and no horizontal overflow occurs on mobile viewports.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-24",
+      "summary": "Apply full accessibility improvements across all interactive elements and page structure: (1) Add or audit aria-label / aria-describedby on all buttons, links, and form inputs; (2) Ensure all form fields have associated <label> tags; (3) Add keyboard navigation support (tab order, focus-visible rings) throughout; (4) Use semantic HTML5 elements (nav, main, section, article, footer, h1–h3 hierarchy); (5) Ensure sufficient color contrast (WCAG AA minimum) for all text on backgrounds.",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-25",
+      "summary": "Improve visual hierarchy and scannability across all sections: replace long text blocks with short paragraphs (max 2–3 sentences), add icons or emoji-style bullets to feature lists in Services and How It Works sections, ensure bold headings clearly label each section, and add sufficient vertical whitespace (padding/margin) between sections for breathing room.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-26",
+      "summary": "Audit and enhance all interactive elements for consistent hover/click feedback: all buttons must have hover color transitions (150–200ms ease), active/pressed state (slight scale or darken), and focus-visible ring. Links in the navbar and footer must have underline or color hover states. Form submit buttons must show a loading spinner while the mutation is in-flight and be disabled during submission.",
+      "reqIds": [
+        "REQ-17"
       ],
       "status": "pending"
     }

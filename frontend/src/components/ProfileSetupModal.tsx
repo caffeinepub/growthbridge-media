@@ -34,7 +34,7 @@ export default function ProfileSetupModal() {
           <div className="w-14 h-14 bg-teal-50 rounded-2xl flex items-center justify-center mb-4">
             <User className="w-7 h-7 text-teal-600" />
           </div>
-          <h2 id="profile-setup-title" className="text-2xl font-bold text-slate-900 mb-1">Welcome to GrowthBridge!</h2>
+          <h2 id="profile-setup-title" className="text-2xl font-bold text-slate-900 mb-1">Welcome to HP BRIDGE MEDIA!</h2>
           <p className="text-slate-500 text-sm">Let's set up your profile to get started.</p>
         </div>
 

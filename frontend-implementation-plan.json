@@ -1,342 +1,105 @@
 {
   "kind": "implementation_plan",
   "version": "1.0",
-  "title": "GrowthBridge Media — Frontend Implementation Plan",
+  "title": "Force-replace navbar logo text from 'GrowthBridge Media' to 'HP BRIDGE MEDIA'",
   "requirements": [
     {
-      "id": "REQ-1",
-      "summary": "Implement sticky navigation bar with active link highlighting, scroll behavior, and mobile hamburger menu",
+      "id": "REQ-19",
+      "summary": "Replace all occurrences of 'GrowthBridge Media' in Navbar.tsx with 'HP BRIDGE MEDIA'",
       "acceptanceCriteria": [
-        "Navbar is sticky and remains visible on scroll",
-        "Active link is visually highlighted based on current scroll position or route",
-        "Navbar background changes style (e.g., adds shadow or becomes opaque) after scrolling down",
-        "All nav links scroll smoothly to their respective page sections",
-        "Hamburger icon appears on mobile, toggles menu open/close with animation"
+        "The navbar logo area displays 'HP BRIDGE MEDIA' and not 'GrowthBridge Media' when the page first loads.",
+        "The navbar logo area displays 'HP BRIDGE MEDIA' after the user scrolls down (scroll-triggered background change state).",
+        "No string 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' remains in Navbar.tsx."
       ],
       "file_operations": [
         {
           "path": "frontend/src/components/Navbar.tsx",
-          "operation": "create",
-          "description": "Create a sticky navigation component with logo (using frontend/public/assets/generated/logo.dim_320x80.png), nav links (Home, For Brands, For Influencers, Pricing, Contact), scroll-based background change, active link highlighting based on scroll position, smooth scrolling to sections, and mobile hamburger menu with toggle animation. Include proper aria-label attributes and keyboard navigation support."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Import and render the Navbar component at the top of the application layout. Ensure it remains fixed across all routes and pages."
+          "description": "Locate every hardcoded string or JSX text node that renders 'GrowthBridge Media' (including partial matches such as 'GrowthBridge' or 'Growth Bridge Media') and replace each one with 'HP BRIDGE MEDIA'. Ensure the navbar logo text visible in the top-left reads 'HP BRIDGE MEDIA' at all viewport sizes and in both the transparent and scrolled/opaque background states. This applies to all occurrences in the desktop navbar and mobile drawer menu."
         }
       ]
     },
     {
-      "id": "REQ-2",
-      "summary": "Build Hero section with headline, subheadline, and two CTA buttons with scroll behavior and accessibility",
+      "id": "REQ-20",
+      "summary": "Replace all occurrences of 'GrowthBridge Media' across all frontend source files with 'HP BRIDGE MEDIA'",
       "acceptanceCriteria": [
-        "Headline and subheadline are displayed prominently",
-        "'Join as Influencer' button scrolls to the Influencer Application Form section",
-        "'Work With Us as a Brand' button scrolls to the Brand Inquiry Form section",
-        "Buttons have visible hover and active/click state animations",
-        "Buttons are keyboard navigable and include aria-label attributes"
+        "grep -r 'GrowthBridge' frontend/src returns zero results.",
+        "grep 'GrowthBridge' frontend/index.html returns zero results.",
+        "The browser tab title reads 'HP BRIDGE MEDIA'.",
+        "The footer logo/copyright reads 'HP BRIDGE MEDIA'.",
+        "The AccessDeniedScreen renders 'HP BRIDGE MEDIA' wherever the company name appears.",
+        "No user-facing text anywhere on the site displays 'GrowthBridge Media' or any variation."
       ],
       "file_operations": [
         {
-          "path": "frontend/src/components/HeroSection.tsx",
-          "operation": "create",
-          "description": "Create Hero section with headline 'Connecting Brands With High-Converting Micro-Influencers', subheadline 'We help brands scale with curated influencer campaigns and help creators secure consistent paid deals.', and background illustration using frontend/public/assets/generated/hero-illustration.dim_1200x600.png. Include two CTA buttons: 'Join as Influencer' (scrolls to #influencer-form section) and 'Work With Us as a Brand' (scrolls to #brand-form section). Implement hover animations, click feedback, keyboard accessibility, and aria-label attributes for both buttons."
-        },
-        {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/index.html",
           "operation": "modify",
-          "description": "Import and render the HeroSection component in the main application layout after the Navbar."
-        }
-      ]
-    },
-    {
-      "id": "REQ-3",
-      "summary": "Build 'How It Works' section with parallel tracks for Brands and Influencers",
-      "acceptanceCriteria": [
-        "Both brand and influencer tracks are displayed with numbered steps",
-        "Content matches the specified step descriptions exactly"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/HowItWorksSection.tsx",
-          "operation": "create",
-          "description": "Create 'How It Works' section with two parallel columns. For Brands: 3 numbered steps (1. Submit campaign goal, 2. Get matched with curated influencers, 3. We manage execution & reporting). For Influencers: 3 numbered steps (1. Apply to join network, 2. Get matched with campaigns, 3. Get paid securely). Use clear visual hierarchy with icons or numbered badges."
+          "description": "Replace the <title> tag content from 'GrowthBridge Media' to 'HP BRIDGE MEDIA' so the browser tab displays the correct company name."
         },
         {
-          "path": "frontend/src/App.tsx",
+          "path": "frontend/src/components/Footer.tsx",
           "operation": "modify",
-          "description": "Import and render the HowItWorksSection component in the main application layout after the HeroSection."
-        }
-      ]
-    },
-    {
-      "id": "REQ-4",
-      "summary": "Build Services section displaying two columns for Brands and Influencers",
-      "acceptanceCriteria": [
-        "All listed services appear under the correct column",
-        "Section is clearly labeled and visually distinct"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/ServicesSection.tsx",
-          "operation": "create",
-          "description": "Create Services section with two columns. For Brands column: Influencer Campaign Management, Product Launch Campaigns, Brand Awareness Campaigns, Niche Targeting, Geo-targeted campaigns. For Influencers column: Brand Deal Sourcing, Negotiation Handling, Long-term partnerships, Campaign support. Display as bulleted lists or card grids with clear visual separation between columns."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the ServicesSection component in the main application layout after the HowItWorksSection."
-        }
-      ]
-    },
-    {
-      "id": "REQ-5",
-      "summary": "Build Pricing section describing commission model without currency symbols or monetary figures",
-      "acceptanceCriteria": [
-        "Pricing section clearly states the 20% commission model",
-        "Optional package tiers are described without any currency symbols or amounts",
-        "No monetary figures appear anywhere on the page"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/PricingSection.tsx",
-          "operation": "create",
-          "description": "Create Pricing section that describes the 20% commission model in plain text without any currency symbols or monetary amounts. Describe optional package tiers conceptually (e.g., 'Starter', 'Professional', 'Enterprise') focusing on features and value rather than specific prices. Ensure no dollar signs, numbers with currency context, or price figures appear."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the PricingSection component in the main application layout after the ServicesSection."
-        }
-      ]
-    },
-    {
-      "id": "REQ-6",
-      "summary": "Build fully functional Influencer Application Form with validation, error messages, and success modal",
-      "acceptanceCriteria": [
-        "All nine fields are present and labeled correctly",
-        "Required fields show inline error messages if left empty on submit",
-        "Submitting the form does not reload the page",
-        "A success modal popup appears after successful submission",
-        "Submit button has a loading/animation state during submission",
-        "Form data is persisted in the Motoko backend"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/InfluencerApplicationForm.tsx",
-          "operation": "create",
-          "description": "Create Influencer Application Form with fields: Full Name, Instagram Handle, Followers Count, Niche, Engagement Rate, Email, Location, Rate Card, Portfolio Link. Implement required field validation with inline error messages, prevent default form submission (no page reload), show loading state on submit button during submission, and call backend submitInfluencerApplication. Display success modal popup on successful submission. Add id='influencer-form' to the form container for scroll targeting."
-        },
-        {
-          "path": "frontend/src/hooks/useSubmitInfluencerApplication.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook for submitting influencer applications. Call actor.submitInfluencerApplication with form data, handle loading and error states, and return success/error results for UI feedback."
-        },
-        {
-          "path": "frontend/src/components/SuccessModal.tsx",
-          "operation": "create",
-          "description": "Create a reusable success modal component that displays a success message with close button. Accept props for visibility state, onClose callback, and custom message text. Include overlay with click-to-close and ESC key support."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the InfluencerApplicationForm component in the main application layout after the PricingSection."
-        }
-      ]
-    },
-    {
-      "id": "REQ-7",
-      "summary": "Build fully functional Brand Inquiry Form with validation, error messages, and success modal",
-      "acceptanceCriteria": [
-        "All eight fields are present and labeled correctly",
-        "Required fields show inline error messages if left empty on submit",
-        "Submitting the form does not reload the page",
-        "A success modal popup appears after successful submission",
-        "Submit button has a loading/animation state during submission",
-        "Form data is persisted in the Motoko backend"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/components/BrandInquiryForm.tsx",
-          "operation": "create",
-          "description": "Create Brand Inquiry Form with fields: Brand Name, Industry, Website, Marketing Contact Name, Email, Budget Range, Campaign Goal, Timeline. Implement required field validation with inline error messages, prevent default form submission (no page reload), show loading state on submit button during submission, and call backend submitBrandInquiry. Reuse the SuccessModal component on successful submission. Add id='brand-form' to the form container for scroll targeting."
-        },
-        {
-          "path": "frontend/src/hooks/useSubmitBrandInquiry.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook for submitting brand inquiries. Call actor.submitBrandInquiry with form data, handle loading and error states, and return success/error results for UI feedback."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the BrandInquiryForm component in the main application layout after the InfluencerApplicationForm."
-        }
-      ]
-    },
-    {
-      "id": "REQ-9",
-      "summary": "Build protected Admin Dashboard with Internet Identity authentication for managing influencers, brands, campaigns, and viewing stats",
-      "acceptanceCriteria": [
-        "Admin Dashboard route is not accessible without a valid Internet Identity login",
-        "Admin can view a list of all influencer applications with approve/reject actions",
-        "Admin can view all brand inquiries",
-        "Admin can assign an influencer to a campaign linked to a brand",
-        "Admin can update campaign status and deal value",
-        "Dashboard displays total deal value and total commission (20%) earned across all campaigns"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/pages/AdminDashboard.tsx",
-          "operation": "create",
-          "description": "Create Admin Dashboard page that checks authorization using the authorization component. Use isCallerAdmin() to verify admin access and show AccessDeniedScreen for unauthorized users. Display tabs or sections for: Influencer Applications (with approve/reject actions using approveInfluencer), Brand Inquiries (read-only list), Campaign Management (create/update campaigns with assignInfluencer capability), and Aggregate Stats (total deal value and 20% commission using getAggregateStats). Verify the authorization component's usage instructions before implementing."
+          "description": "Replace all occurrences of 'GrowthBridge Media' with 'HP BRIDGE MEDIA' in the footer logo text, copyright line, and any other text nodes that reference the company name."
         },
         {
           "path": "frontend/src/components/AccessDeniedScreen.tsx",
-          "operation": "create",
-          "description": "Create AccessDeniedScreen component to display when non-admin users attempt to access protected admin routes. Show a clear message that admin access is required and provide a link back to the homepage or logout option."
-        },
-        {
-          "path": "frontend/src/hooks/useGetAllInfluencers.ts",
-          "operation": "create",
-          "description": "Create a React Query hook for fetching all influencer applications using actor.getAllInfluencers. Enable query only when user is authenticated and admin."
-        },
-        {
-          "path": "frontend/src/hooks/useGetAllBrands.ts",
-          "operation": "create",
-          "description": "Create a React Query hook for fetching all brand inquiries using actor.getAllBrands. Enable query only when user is authenticated and admin."
-        },
-        {
-          "path": "frontend/src/hooks/useGetAllCampaigns.ts",
-          "operation": "create",
-          "description": "Create a React Query hook for fetching all campaigns using actor.getAllCampaigns. Enable query only when user is authenticated and admin."
-        },
-        {
-          "path": "frontend/src/hooks/useGetAggregateStats.ts",
-          "operation": "create",
-          "description": "Create a React Query hook for fetching aggregate statistics (total deal value and total commission) using actor.getAggregateStats. Enable query only when user is authenticated and admin."
-        },
-        {
-          "path": "frontend/src/hooks/useApproveInfluencer.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook for approving or rejecting influencer applications. Call actor.approveInfluencer with influencer ID and approval boolean. Invalidate influencer queries on success."
-        },
-        {
-          "path": "frontend/src/hooks/useCreateCampaign.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook for creating campaigns. Call actor.createCampaign with campaign data including brandId, influencerId, dealValue, and status. Invalidate campaign queries on success."
-        },
-        {
-          "path": "frontend/src/hooks/useUpdateCampaignStatus.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook for updating campaign status. Call actor.updateCampaignStatus with campaignId and new status. Invalidate campaign queries on success."
-        },
-        {
-          "path": "frontend/src/hooks/useUpdateCampaignDealValue.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook for updating campaign deal value. Call actor.updateCampaignDealValue with campaignId and new dealValue. Invalidate campaign and stats queries on success."
-        },
-        {
-          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Add a protected route for /admin pointing to AdminDashboard. Ensure the route requires authentication using the authorization component before rendering the dashboard. Add a conditional navigation link in the Navbar that shows 'Admin' only for authenticated admin users. Verify the authorization component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/LoginButton.tsx",
-          "operation": "create",
-          "description": "Create a LoginButton component following the authorization component's usage instructions. Implement login/logout toggle with Internet Identity, handle authentication state, and clear query cache on logout. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/components/Navbar.tsx",
-          "operation": "modify",
-          "description": "Add LoginButton component to the navbar. Show 'Admin' navigation link only when user is authenticated and has admin role (using isCallerAdmin check from the authorization component). Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/hooks/useIsCallerAdmin.ts",
-          "operation": "create",
-          "description": "Create a React Query hook for checking if the current user is an admin using actor.isCallerAdmin. Enable query only when user is authenticated. Use this hook in components that need to conditionally display admin-only UI elements."
-        },
-        {
-          "path": "frontend/src/components/ProfileSetupModal.tsx",
-          "operation": "create",
-          "description": "Create ProfileSetupModal component following the authorization component's usage instructions for user profile setup. Display modal on first login when getCallerUserProfile returns null. Collect user name and email, call saveCallerUserProfile, and prevent modal flash using proper loading state checks. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/hooks/useGetCallerUserProfile.ts",
-          "operation": "create",
-          "description": "Create a React Query hook for fetching the current user's profile using actor.getCallerUserProfile. Follow the authorization component's pattern for preventing profile setup modal flash by properly handling actor loading state. Enable query only when actor is available and user is authenticated. Verify the component's usage instructions before implementing."
-        },
-        {
-          "path": "frontend/src/hooks/useSaveCallerUserProfile.ts",
-          "operation": "create",
-          "description": "Create a React Query mutation hook for saving the current user's profile using actor.saveCallerUserProfile. Invalidate the caller user profile query on success. Use this hook in ProfileSetupModal."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Integrate ProfileSetupModal to show on first login when user has no profile. Use the authorization component's recommended approach to prevent modal flash. Verify the component's usage instructions before implementing."
-        }
-      ]
-    },
-    {
-      "id": "REQ-10",
-      "summary": "Apply cohesive minimal modern startup visual theme with semantic HTML, accessibility, and animated counter",
-      "acceptanceCriteria": [
-        "All pages use a consistent white-based color palette with soft shadows and rounded UI elements",
-        "Typography has a clear visual hierarchy (headings, subheadings, body text)",
-        "An animated counter (e.g., campaigns completed) is visible in a stats or hero area",
-        "All interactive elements have visible hover and focus states",
-        "Page uses semantic HTML5 elements with proper aria attributes and label tags"
-      ],
-      "file_operations": [
-        {
-          "path": "frontend/src/index.css",
-          "operation": "modify",
-          "description": "Define global CSS custom properties for the minimal modern startup theme: white/light background colors, teal and amber accent colors, professional font stack, soft shadow utilities, high whitespace spacing scale, and smooth scroll behavior. Ensure consistent typography hierarchy (h1-h6, body text sizes). Add focus-visible styles for keyboard navigation."
-        },
-        {
-          "path": "frontend/tailwind.config.js",
-          "operation": "modify",
-          "description": "Extend Tailwind theme with custom colors (teal, amber accents on white base), rounded button utilities, shadow utilities, and spacing scale that supports high whitespace. Configure typography plugin for clear hierarchy."
-        },
-        {
-          "path": "frontend/src/components/AnimatedCounter.tsx",
-          "operation": "create",
-          "description": "Create AnimatedCounter component that animates a number from 0 to a target value using requestAnimationFrame or a library like react-countup. Accept props for target number, duration, and optional suffix/prefix. Use this component to display campaigns completed or other stats."
-        },
-        {
-          "path": "frontend/src/components/StatsSection.tsx",
-          "operation": "create",
-          "description": "Create StatsSection component that displays key metrics (e.g., campaigns completed, influencers in network, brands served) using the AnimatedCounter component. Place this section in the hero area or as a standalone section. Use semantic HTML with proper heading hierarchy."
-        },
-        {
-          "path": "frontend/src/App.tsx",
-          "operation": "modify",
-          "description": "Import and render the StatsSection component in the main application layout, either within the HeroSection or as a separate section after it. Ensure all sections follow semantic HTML5 structure with appropriate landmark elements (header, nav, main, section, footer)."
-        },
-        {
-          "path": "frontend/src/components/Navbar.tsx",
-          "operation": "modify",
-          "description": "Apply theme styling: rounded buttons, soft shadow on scroll, hover states with smooth transitions, and proper focus-visible styles for keyboard navigation. Ensure all interactive elements have aria-labels."
+          "description": "Replace all occurrences of 'GrowthBridge Media' with 'HP BRIDGE MEDIA' in the access denied screen message and any other text that references the company name."
         },
         {
           "path": "frontend/src/components/HeroSection.tsx",
           "operation": "modify",
-          "description": "Apply theme styling: clear typography hierarchy with large headline, prominent CTA buttons with rounded corners, hover/active states, and high whitespace. Ensure buttons have proper aria-labels and semantic HTML structure."
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in the hero section headline, subtext, or any other text nodes."
         },
         {
-          "path": "frontend/src/components/InfluencerApplicationForm.tsx",
+          "path": "frontend/src/App.tsx",
           "operation": "modify",
-          "description": "Apply theme styling: rounded inputs, soft shadows, clear label tags with proper for attributes, inline error message styling, rounded submit button with hover/loading states, and proper aria-describedby for error messages. Use semantic HTML5 form elements."
-        },
-        {
-          "path": "frontend/src/components/BrandInquiryForm.tsx",
-          "operation": "modify",
-          "description": "Apply theme styling consistent with InfluencerApplicationForm: rounded inputs, soft shadows, clear label tags, inline error styling, rounded submit button with hover/loading states, and proper aria attributes. Use semantic HTML5 form elements."
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in any text nodes, comments, or string literals within the root App component."
         },
         {
           "path": "frontend/src/pages/AdminDashboard.tsx",
           "operation": "modify",
-          "description": "Apply theme styling: rounded cards/panels for each section, soft shadows, clear typography hierarchy for headings and data tables, rounded action buttons with hover states, and high whitespace between sections. Ensure all interactive elements have proper focus states and aria attributes."
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in the admin dashboard page headers, labels, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/BrandInquiryForm.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in form labels, placeholders, help text, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/InfluencerApplicationForm.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in form labels, placeholders, help text, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/HowItWorksSection.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in step descriptions, titles, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/PricingSection.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in pricing tier descriptions, CTAs, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/ServicesSection.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in service card titles, descriptions, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/StatsSection.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in stat labels, descriptions, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/ProfileSetupModal.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in modal title, instructions, or any other text nodes."
+        },
+        {
+          "path": "frontend/src/components/SuccessModal.tsx",
+          "operation": "modify",
+          "description": "Replace all occurrences of 'GrowthBridge Media', 'GrowthBridge', or 'Growth Bridge Media' with 'HP BRIDGE MEDIA' in success message text or any other text nodes."
         }
       ]
     }

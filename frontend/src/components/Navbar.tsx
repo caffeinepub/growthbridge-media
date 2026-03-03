@@ -118,12 +118,15 @@ export default function Navbar({ onAdminClick, showAdminBack, onBackToSite }: Na
               Back to Site
             </button>
           ) : (
-            <a href="#home" onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }} aria-label="GrowthBridge Media home">
-              <img
-                src="/assets/generated/logo.dim_320x80.png"
-                alt="GrowthBridge Media"
-                className="h-8 w-auto"
-              />
+            <a
+              href="#home"
+              onClick={(e) => { e.preventDefault(); scrollToSection('#home'); }}
+              aria-label="HP BRIDGE MEDIA home"
+              className="flex items-center gap-2 group"
+            >
+              <span className="text-lg font-extrabold tracking-tight text-slate-900 group-hover:text-teal-700 transition-colors">
+                HP <span className="text-teal-600">BRIDGE</span> MEDIA
+              </span>
             </a>
           )}
         </div>
