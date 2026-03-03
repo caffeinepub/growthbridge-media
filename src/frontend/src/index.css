@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── Font Face Declarations ── */
+@font-face {
+  font-family: "Outfit";
+  src: url("/assets/fonts/Outfit.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/BricolageGrotesque.woff2") format("woff2");
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@layer base {
+  :root {
+    --radius: 0.75rem;
+
+    /* ── BRANDSMITRA Design Tokens (OKLCH) — Dark Navy + Cyan ── */
+
+    /* Backgrounds — dark navy as default (dark-first theme) */
+    --background: 0.13 0.03 230;
+    --foreground: 0.97 0 0;
+
+    /* Card / Popover */
+    --card: 0.18 0.03 230;
+    --card-foreground: 0.97 0 0;
+    --popover: 0.18 0.03 230;
+    --popover-foreground: 0.97 0 0;
+
+    /* Primary — Bright Cyan #00DDFF */
+    --primary: 0.82 0.15 200;
+    --primary-foreground: 0.13 0.03 230;
+
+    /* Secondary — Deep Blue #0066B2 */
+    --secondary: 0.45 0.14 240;
+    --secondary-foreground: 0.97 0 0;
+
+    /* Muted — Dark Teal #2D4A47 */
+    --muted: 0.32 0.04 185;
+    --muted-foreground: 0.62 0.05 185;
+
+    /* Accent — Mint/Aqua #4DFFD2 */
+    --accent: 0.88 0.12 175;
+    --accent-foreground: 0.13 0.03 230;
+
+    /* Destructive */
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    /* Border / Input / Ring */
+    --border: 0.32 0.04 185;
+    --input: 0.25 0.03 210;
+    --ring: 0.82 0.15 200;
+
+    /* Charts */
+    --chart-1: 0.82 0.15 200;
+    --chart-2: 0.88 0.12 175;
+    --chart-3: 0.45 0.14 240;
+    --chart-4: 0.62 0.05 185;
+    --chart-5: 0.32 0.04 185;
+
+    /* Sidebar */
+    --sidebar: 0.18 0.03 230;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.82 0.15 200;
+    --sidebar-primary-foreground: 0.13 0.03 230;
+    --sidebar-accent: 0.32 0.04 185;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.32 0.04 185;
+    --sidebar-ring: 0.82 0.15 200;
+  }
+
+  .dark {
+    --background: 0.13 0.03 230;
+    --foreground: 0.97 0 0;
+    --card: 0.18 0.03 230;
+    --card-foreground: 0.97 0 0;
+    --popover: 0.18 0.03 230;
+    --popover-foreground: 0.97 0 0;
+    --primary: 0.82 0.15 200;
+    --primary-foreground: 0.13 0.03 230;
+    --secondary: 0.45 0.14 240;
+    --secondary-foreground: 0.97 0 0;
+    --muted: 0.32 0.04 185;
+    --muted-foreground: 0.62 0.05 185;
+    --accent: 0.88 0.12 175;
+    --accent-foreground: 0.13 0.03 230;
+    --destructive: 0.704 0.191 22.216;
+    --destructive-foreground: 0.97 0 0;
+    --border: 0.32 0.04 185;
+    --input: 0.25 0.03 210;
+    --ring: 0.82 0.15 200;
+    --chart-1: 0.82 0.15 200;
+    --chart-2: 0.88 0.12 175;
+    --chart-3: 0.45 0.14 240;
+    --chart-4: 0.62 0.05 185;
+    --chart-5: 0.32 0.04 185;
+    --sidebar: 0.18 0.03 230;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.82 0.15 200;
+    --sidebar-primary-foreground: 0.13 0.03 230;
+    --sidebar-accent: 0.32 0.04 185;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.32 0.04 185;
+    --sidebar-ring: 0.82 0.15 200;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Focus-visible styles for keyboard navigation */
+  :focus-visible {
+    outline: 2px solid oklch(var(--ring));
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  /* Soft shadow utility used throughout the app */
+  .shadow-soft {
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px
+      rgba(0, 0, 0, 0.2);
+  }
+
+  /* Cyan glow effect for CTAs */
+  .shadow-cyan-glow {
+    box-shadow: 0 0 20px rgba(0, 221, 255, 0.25);
+  }
+
+  /* Dark card utility */
+  .card-dark {
+    background: #112233;
+    border: 1px solid rgba(45, 74, 71, 0.5);
+  }
+}
